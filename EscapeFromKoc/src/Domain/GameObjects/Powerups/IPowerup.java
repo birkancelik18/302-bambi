@@ -1,7 +1,8 @@
 package Domain.GameObjects.Powerups;
-import java.awt.Graphics;
 
 import Domain.Game.Location;
+
+import java.awt.*;
 
 public interface IPowerup {
 	public String getType();

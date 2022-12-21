@@ -1,5 +1,6 @@
 package Domain.Alien;
-import java.awt.Graphics;
+
+import java.awt.*;
 
 
 public interface Alien {

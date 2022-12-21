@@ -1,10 +1,8 @@
 package Domain.Game;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.util.LinkedList;
-
 import Domain.GameObjects.GameObject;
+
+import java.util.LinkedList;
 
 public class Building {
 	public LinkedList<GameObject> gameObjectList = new LinkedList<GameObject>();

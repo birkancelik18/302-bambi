@@ -1,11 +1,9 @@
 package Domain.Player;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Point;
-
-import Domain.GameObjects.Key;
 import Domain.Game.Location;
+import Domain.GameObjects.Key;
+
+import java.awt.*;
 
 public class Avatar {
 

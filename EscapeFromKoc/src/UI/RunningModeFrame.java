@@ -1,36 +1,18 @@
 package UI;
 
-import java.awt.*;  
-import java.awt.AWTEvent;
-import java.awt.BorderLayout;
-import java.awt.CardLayout;
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.FlowLayout;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.text.DecimalFormat;
-
-import javax.swing.BoxLayout;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.Timer;
-import Domain.GameObjects.Powerups.IPowerup;
-import Domain.GameObjects.GameObject;
 import Domain.Alien.Alien;
 import Domain.Controllers.AlienController;
 import Domain.Controllers.GameController;
-import Domain.Controllers.PowerupController;
 import Domain.Controllers.PlayerController;
+import Domain.Controllers.PowerupController;
 import Domain.Game.GameKeyListener;
+import Domain.GameObjects.Powerups.IPowerup;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 
 
 

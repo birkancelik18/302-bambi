@@ -1,12 +1,10 @@
 package Domain.Alien;
 
-import java.awt.Graphics;
-import java.util.concurrent.ThreadLocalRandom;
-
 import Domain.Game.Location;
-import java.awt.Color;
-import javax.swing.ImageIcon;
-import java.awt.Image;
+
+import javax.swing.*;
+import java.awt.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class TimeWastingAlien implements Alien {
 

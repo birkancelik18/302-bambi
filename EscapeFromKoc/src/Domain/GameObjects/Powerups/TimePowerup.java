@@ -1,10 +1,10 @@
 package Domain.GameObjects.Powerups;
 
-import java.awt.Graphics;
-import java.util.concurrent.ThreadLocalRandom;
 import Domain.Game.Location;
-import javax.swing.ImageIcon;
-import java.awt.Image;
+
+import javax.swing.*;
+import java.awt.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class TimePowerup implements IPowerup {
 

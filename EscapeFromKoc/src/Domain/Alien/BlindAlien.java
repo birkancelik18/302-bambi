@@ -1,15 +1,11 @@
 package Domain.Alien;
 
 
-import java.awt.Graphics;
-import java.util.concurrent.ThreadLocalRandom;
-
-import javax.swing.ImageIcon;
-
 import Domain.Game.Location;
-import java.awt.Color;
 
-import java.awt.Image;
+import javax.swing.*;
+import java.awt.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class BlindAlien implements Alien {
 

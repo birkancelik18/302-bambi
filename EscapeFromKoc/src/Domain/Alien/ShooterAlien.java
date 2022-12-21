@@ -2,15 +2,12 @@ package Domain.Alien;
 
 import Domain.Controllers.GameController;
 import Domain.Game.Location;
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Image;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.concurrent.ThreadLocalRandom;
-
-import javax.swing.ImageIcon;
-import javax.swing.Timer;
 
 
 public class ShooterAlien implements Alien {

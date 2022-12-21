@@ -1,14 +1,16 @@
 package Domain.Controllers;
 
-import java.util.LinkedList;
-import java.util.concurrent.ThreadLocalRandom;
-
 import Domain.Game.Building;
-import Domain.Game.PlayerState;
 import Domain.Game.GameState;
+import Domain.Game.PlayerState;
 import Domain.GameObjects.GameObject;
+import Domain.SaveLoad.FileSaveLoadAdapter;
+import Domain.SaveLoad.ISaveLoadAdapter;
 import UI.KeyFoundAlert;
 import UI.StartFrame;
+
+import java.util.LinkedList;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class GameController{
 
@@ -23,7 +25,9 @@ public class GameController{
 	public Building currentBuilding;
 	private LinkedList<Building> buildings = new LinkedList<Building>();
 	private LinkedList<GameObject> gameObjectList = new LinkedList<GameObject>();
-	
+
+	private ISaveLoadAdapter saveLoadService;
+
 	public GameController() {
 		gameState = new GameState();
 		for(int i=0 ;i<gameState.getBuildingCount() ;i++) {
@@ -136,12 +140,10 @@ public class GameController{
 		}
 	}
 
-
 	public void incrementScore(double increment) {
 		player.incrementScore(increment);
 	}
-	
-	
+
 	public void setObject(GameObject object) {
 		this.gameObjectList.add(object);
 		this.currentBuilding.gameObjectList.add(object);
@@ -181,5 +183,12 @@ public class GameController{
 			b.getObjectList().get(keyObject).setContainsKey(true);
 		}
 	}
+
+	public void saveGame(){
+		// this is just a dummy save function
+		saveLoadService = new FileSaveLoadAdapter();
+		saveLoadService.save();
+	}
+
 }
 	

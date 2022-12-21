@@ -1,11 +1,11 @@
 package Domain.Controllers;
 
+import Domain.Alien.Alien;
+import Domain.Alien.AlienFactory;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
-
-import Domain.Alien.Alien;
-import Domain.Alien.AlienFactory;
 
 public class AlienController {
 

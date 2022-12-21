@@ -1,11 +1,11 @@
 package Domain.Controllers;
 
+import Domain.GameObjects.Powerups.IPowerup;
+import Domain.GameObjects.Powerups.PowerupFactory;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
-
-import Domain.GameObjects.Powerups.PowerupFactory;
-import Domain.GameObjects.Powerups.IPowerup;
 
 public class PowerupController {
     PowerupFactory factory;

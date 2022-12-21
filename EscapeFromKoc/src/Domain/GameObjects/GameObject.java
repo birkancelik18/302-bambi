@@ -1,9 +1,8 @@
 package Domain.GameObjects;
 
-import java.awt.Color;
-import java.awt.Graphics;
-
 import Domain.Game.Location;
+
+import java.awt.*;
 
 public class GameObject {
 	

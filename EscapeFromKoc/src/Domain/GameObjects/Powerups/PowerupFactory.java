@@ -1,14 +1,8 @@
 package Domain.GameObjects.Powerups;
 
-import java.util.Random;
-
 import Domain.Controllers.GameController;
-import Domain.GameObjects.Powerups.BottlePowerup;
-import Domain.GameObjects.Powerups.HintPowerup;
-import Domain.GameObjects.Powerups.IPowerup;
-import Domain.GameObjects.Powerups.LifePowerup;
-import Domain.GameObjects.Powerups.TimePowerup;
-import Domain.GameObjects.Powerups.VestPowerup;
+
+import java.util.Random;
 
 public class PowerupFactory {
     

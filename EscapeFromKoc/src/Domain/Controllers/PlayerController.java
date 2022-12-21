@@ -1,6 +1,5 @@
 package Domain.Controllers;
 
-import java.security.Key;
 import Domain.Game.PlayerState;
 import Domain.Player.Avatar;
 import Domain.Player.Inventory;

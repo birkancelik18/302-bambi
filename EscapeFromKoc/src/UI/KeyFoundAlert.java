@@ -1,7 +1,6 @@
 package UI;
 
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 public class KeyFoundAlert {
 	public boolean alert(int index) {
@@ -9,7 +8,7 @@ public class KeyFoundAlert {
 		    return true;
 		}else {
 			int dialogButton = JOptionPane.YES_NO_OPTION;
-			int result = JOptionPane.showConfirmDialog(null, "Key is found! You can continue with the next building.\n If No, you can surrender and continue suffering in Koç!",null, dialogButton);
+			int result = JOptionPane.showConfirmDialog(null, "Key is found! You can continue with the next building.\n If No, you can surrender and continue suffering in Koï¿½!",null, dialogButton);
 		    if (result == JOptionPane.YES_OPTION) {
 		    	return true;
 		    }else {

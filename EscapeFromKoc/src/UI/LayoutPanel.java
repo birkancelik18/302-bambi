@@ -1,19 +1,14 @@
 package UI;
 
-import javax.swing.*;
-
-import Domain.GameObjects.GameObject;
-import Domain.GameObjects.Powerups.IPowerup;
 import Domain.Alien.Alien;
 import Domain.Controllers.GameController;
-import Domain.Controllers.PowerupController;
-import Domain.Game.GameKeyListener;
 import Domain.Game.GameMouseListener;
+import Domain.GameObjects.GameObject;
+import Domain.GameObjects.Powerups.IPowerup;
 import Domain.Player.Avatar;
 
+import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.LinkedList;
 
 
