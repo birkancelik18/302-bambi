@@ -60,8 +60,9 @@ public class LoginFrame extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				userName = userNameField.getText();
-				
+
 				if (loginController.isRegistered(userName)) {
+					loginController.setLoginName(userName);
 					new BuildingModeFrame();
 					dispose();
 				}

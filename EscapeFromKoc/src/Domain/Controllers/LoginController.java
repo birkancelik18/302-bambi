@@ -11,7 +11,9 @@ import java.util.Scanner;
 public class LoginController {
     GameController gameController;
     private static List<String> userNameList;
-    
+
+    private static String loginName;
+
     public LoginController(GameController gameController) {
         this.gameController = gameController;
     }
@@ -65,5 +67,12 @@ public class LoginController {
             k.printStackTrace();
           }
         return 3;
+    }
+    public static String getLoginName() {
+        return loginName;
+    }
+
+    public static void setLoginName(String loginName) {
+        LoginController.loginName = loginName;
     }
 }

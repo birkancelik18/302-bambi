@@ -23,10 +23,11 @@ public class GameController{
 	private boolean buildingModeDone = false;
 	public int timeLeft;
 	public Building currentBuilding;
+
 	private LinkedList<Building> buildings = new LinkedList<Building>();
 	private LinkedList<GameObject> gameObjectList = new LinkedList<GameObject>();
 
-	private ISaveLoadAdapter saveLoadService;
+	private FileSaveLoadAdapter saveLoadService;
 
 	public GameController() {
 		gameState = new GameState();
@@ -188,6 +189,9 @@ public class GameController{
 		// this is just a dummy save function
 		saveLoadService = new FileSaveLoadAdapter();
 		saveLoadService.save();
+	}
+	public LinkedList<Building> getBuildings() {
+		return buildings;
 	}
 
 }
