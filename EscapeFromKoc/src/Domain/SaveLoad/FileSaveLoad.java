@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.List;
 
 import Domain.Controllers.GameController;
 import Domain.Controllers.LoginController;
@@ -19,8 +20,9 @@ public class FileSaveLoad {
 
     public void write(SaveObject currSave) {
         JsonObject save = currSave.generateSaveJson();
-        String name = "save_" + login.getUsernameList().get(0); //TODO: dummy index for trial
-        System.out.println("name is "+ name);
+
+        String playerName = login.getLoginName();
+        String name = "save_" + playerName;
 
         File myFile =  new File("EscapeFromKoc/src/Domain/SaveLoad/Saves/"+name);
         File parent = myFile.getParentFile();
@@ -40,8 +42,11 @@ public class FileSaveLoad {
     }
 
     public JsonObject read() throws JsonSyntaxException, JsonIOException, FileNotFoundException {
-        String name = "save_" + login.getUsernameList().get(0); //TODO: dummy index for trial
-        Object obj = new JsonParser().parse(new FileReader("Saves/"+ name +".json"));
+
+        String playerName = login.getLoginName();
+        String name = "save_" + playerName;
+
+        Object obj = JsonParser.parseReader(new FileReader("Saves/" + name + ".json"));
         JsonObject jo = (JsonObject) obj; //all json imported
 
         return jo;
