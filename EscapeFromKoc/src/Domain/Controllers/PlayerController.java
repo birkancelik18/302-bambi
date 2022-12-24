@@ -2,18 +2,15 @@ package Domain.Controllers;
 
 import Domain.Game.PlayerState;
 import Domain.Player.Avatar;
-import Domain.Player.Inventory;
 
 public class PlayerController {
 	public Avatar avatar;
-	public Inventory inventory;
 	int health;
 	int score;
 	GameController escapeFromKocGame;	
 	PlayerState playerState;
 
 	public PlayerController() {
-		inventory = new Inventory();
 		avatar = new Avatar(25); 
 		escapeFromKocGame = GameController.getInstance();	
 		playerState = new PlayerState();

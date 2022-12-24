@@ -12,11 +12,13 @@ public class BlindAlien implements Alien {
     public int width;
 	public int height;
 	public String type;
-	Location location;
+	private Location location;
+    private boolean empty;
 
 
     public BlindAlien() {
         type = "Blind";
+        empty = false;
         width = 25;
         height = 25;
         int coorX = ((ThreadLocalRandom.current().nextInt(9) % 9)+1) * 50 + 10;
@@ -46,5 +48,15 @@ public class BlindAlien implements Alien {
         // TODO Auto-generated method stub
         
     }
+
+    @Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return empty;
+	}
+
+	public void setEmpty(boolean empty) {
+		this.empty = empty;
+	}
     
 }

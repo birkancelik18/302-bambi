@@ -18,7 +18,8 @@ public class ShooterAlien implements Alien {
 	private Location location;
 	private Location avatarLocation;
 	private boolean isProtectionVestActive;
-	GameController escapeFromKocGame;	
+	private GameController escapeFromKocGame;	
+	private boolean empty;
 
     @Override
     public String getType() {
@@ -29,12 +30,13 @@ public class ShooterAlien implements Alien {
     ActionListener shooterActionListener = new ActionListener() {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if(!escapeFromKocGame.isPaused() && escapeFromKocGame.getAlienController().getAlien().getType().equals("Shooter")) {
-				System.out.println("SHOOT");
-				action();
+			if(escapeFromKocGame.getAlienController().getAlien() != null){
+				if(!escapeFromKocGame.isPaused() && escapeFromKocGame.getAlienController().getAlien().getType().equals("Shooter")) {
+					System.out.println("SHOOT");
+					action();
+				}
 			}
 		}
-
 	};
 	
 	Timer alienTimer = new Timer(1000, shooterActionListener);
@@ -42,6 +44,7 @@ public class ShooterAlien implements Alien {
 	public ShooterAlien(/*Location avatarLocation, boolean wornProtectionVest*/) {
     	escapeFromKocGame = GameController.getInstance();	
         type = "Shooter";
+		empty = false;
 		width = 25;
 		height = 25;
         int coorX = ((ThreadLocalRandom.current().nextInt(9) % 9)+1) * 50 + 10;
@@ -57,7 +60,7 @@ public class ShooterAlien implements Alien {
         g.setColor(Color.CYAN);
         g.fillOval((int)loc.getXLocation(), (int)loc.getYLocation(), width, height);
 
-        Image image = new ImageIcon("./src/UI/Utilities/Images/alien.png").getImage();
+        Image image = new ImageIcon("./EscapeFromKoc/src/UI/Utilities/Images/alien.png").getImage();
         
         g.drawImage(image, (int) location.getXLocation(), (int) location.getYLocation(), 25, 25, null);
 
@@ -76,6 +79,16 @@ public class ShooterAlien implements Alien {
     	}
         
     }
+
+	@Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return empty;
+	}
+
+	public void setEmpty(boolean empty) {
+		this.empty = empty;
+	}
     
    
 }
