@@ -9,6 +9,7 @@ import Domain.SaveLoad.ISaveLoadAdapter;
 import UI.KeyFoundAlert;
 import UI.StartFrame;
 
+import java.io.FileNotFoundException;
 import java.util.LinkedList;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -189,6 +190,10 @@ public class GameController{
 		// this is just a dummy save function
 		saveLoadService = new FileSaveLoadAdapter();
 		saveLoadService.save();
+	}
+	public void loadGame() throws FileNotFoundException {
+		saveLoadService = new FileSaveLoadAdapter();
+		saveLoadService.load();
 	}
 	public LinkedList<Building> getBuildings() {
 		return buildings;

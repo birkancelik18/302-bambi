@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
 
 public class LoginFrame extends JFrame{
 	
@@ -22,15 +23,16 @@ public class LoginFrame extends JFrame{
 	private JButton signUp;	
 	
 	private LoginController loginController;
-	
+	private GameController game;
 	
 	public LoginFrame() {
 		
 		super("Login Page");
 		this.loginController = new LoginController(GameController.getInstance());
-		 
+		this.game = GameController.getInstance();
 
-					
+
+
 
 		setLayout(new BorderLayout());
 		
@@ -63,6 +65,11 @@ public class LoginFrame extends JFrame{
 
 				if (loginController.isRegistered(userName)) {
 					loginController.setLoginName(userName);
+					try {
+						game.loadGame();
+					} catch (FileNotFoundException ex) {
+						throw new RuntimeException(ex);
+					}
 					new BuildingModeFrame();
 					dispose();
 				}

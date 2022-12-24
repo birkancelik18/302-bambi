@@ -14,6 +14,8 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonSyntaxException;
 
+import javax.sound.midi.SysexMessage;
+
 public class FileSaveLoad {
     private GameController game = GameController.getInstance();
     private LoginController login = new LoginController(game);
@@ -46,8 +48,12 @@ public class FileSaveLoad {
         String playerName = login.getLoginName();
         String name = "save_" + playerName;
 
-        Object obj = JsonParser.parseReader(new FileReader("Saves/" + name + ".json"));
+        Object obj = JsonParser.parseReader(new FileReader("EscapeFromKoc/src/Domain/SaveLoad/Saves/" + name + ".json"));
         JsonObject jo = (JsonObject) obj; //all json imported
+
+        System.out.println("*************** GAME DATA IS *************\n\n");
+        System.out.println(jo);
+        System.out.println("\n\n*************** GAME DATA IS *************");
 
         return jo;
 
