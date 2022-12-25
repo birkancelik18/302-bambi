@@ -4,3 +4,5 @@ tester
 BEGUM
 arda
 mete
+amir
+ali
