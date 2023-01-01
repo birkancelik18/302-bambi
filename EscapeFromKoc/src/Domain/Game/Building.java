@@ -5,7 +5,7 @@ import Domain.GameObjects.GameObject;
 import java.util.LinkedList;
 
 public class Building {
-	public LinkedList<GameObject> gameObjectList = new LinkedList<GameObject>();
+	public LinkedList<GameObject> gameObjectList;
 	private int currentObjectCount = 0;
 	private int intendedObjectCount;
 	private boolean isFull;
@@ -20,6 +20,7 @@ public class Building {
     	this.intendedObjectCount = intendedObjectCount;
 		this.doorOpen = false; 
 		this.isFull = false;
+		this.gameObjectList = new LinkedList<GameObject>();
 	}
 
 	public void addAlien(int x, int y){
@@ -105,7 +106,10 @@ public class Building {
 	public LinkedList<GameObject> getObjectList() {
 		return gameObjectList;
 	}
-    
-    
+
+	public void setGameObjectList(LinkedList<GameObject> gameObjectList) {
+		this.gameObjectList = gameObjectList;
+	}
+
 
 }

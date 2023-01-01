@@ -307,5 +307,8 @@ public class GameController{
 		return buildings;
 	}
 
+	public void setBuildings(LinkedList<Building> b){
+		this.buildings = b;
+	}
 }
 	

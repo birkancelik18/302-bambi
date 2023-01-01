@@ -65,16 +65,19 @@ public class LoginFrame extends JFrame{
 
 				if (loginController.isRegistered(userName)) {
 					loginController.setLoginName(userName);
-					/*
+
 					 try {
 						game.loadGame();
+						game.setBuildingModeDone(true);
+						new RunningModeFrame();
+						dispose();
 					} catch (FileNotFoundException ex) {
 						throw new RuntimeException(ex);
 					}
 					
-					 */
-					new BuildingModeFrame();
-					dispose();
+
+					//new BuildingModeFrame();
+					//dispose();
 				}
 				else {
 					JOptionPane.showMessageDialog(null, "Username does not exist");
