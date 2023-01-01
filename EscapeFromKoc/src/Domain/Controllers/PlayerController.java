@@ -34,6 +34,22 @@ public class PlayerController {
 
 	}
 
+	public void useHintPowerUp() throws Exception{
+		if(this.getPlayerState().inventory.checkInventory("hint")){
+			this.getPlayerState().inventory.decrementPowerups("hint");
+			escapeFromKocGame.getGameState().setHintActive(true);
+			System.out.println("Hint Power-up Activated");
+		}
+	}
+
+	public void useBottlePowerUp() throws Exception{
+		if(this.getPlayerState().inventory.checkInventory("bottle")){
+			this.getPlayerState().inventory.decrementPowerups("bottle");
+			escapeFromKocGame.getGameState().setIsBottlePowerupActive(true);
+			System.out.println("Bottle Power-up Activated");
+		}
+	}
+
 	public PlayerState getPlayerState() {
 		return playerState;
 	}
