@@ -80,7 +80,7 @@ public class GameController{
 		}
 	}
 */
-   
+
     public void setPlayer(PlayerController player) {
 		this.player=player;
 	}
@@ -193,7 +193,10 @@ public class GameController{
 	}
 
 	public void pickKey(int x, int y) {
-		for(int i=0; i<currentBuilding.getObjectList().size(); i++) { 
+		// Requires: Game passed to running mode
+		// Modifies: Key is found or not and if found changes building
+		// Effects: if key is found changes building.
+		for(int i=0; i<currentBuilding.getObjectList().size(); i++) {
 	    	GameObject obj = currentBuilding.getObjectList().get(i);
 	    	if(obj.isContainsKey()) {
 	    		double objX = obj.getLocation().getXLocation();
@@ -310,5 +313,6 @@ public class GameController{
 	public void setBuildings(LinkedList<Building> b){
 		this.buildings = b;
 	}
+
 }
 	
