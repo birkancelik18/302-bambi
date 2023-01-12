@@ -31,9 +31,6 @@ public class LoginFrame extends JFrame{
 		this.loginController = new LoginController(GameController.getInstance());
 		this.game = GameController.getInstance();
 
-
-
-
 		setLayout(new BorderLayout());
 		
 		JPanel panel = new JPanel();
@@ -66,18 +63,10 @@ public class LoginFrame extends JFrame{
 				if (loginController.isRegistered(userName)) {
 					loginController.setLoginName(userName);
 
-					 try {
-						game.loadGame();
-						game.setBuildingModeDone(true);
-						new RunningModeFrame();
-						dispose();
-					} catch (FileNotFoundException ex) {
-						throw new RuntimeException(ex);
-					}
-					
+					GameTypeFrame chooseLoadingOption = new GameTypeFrame();
+					chooseLoadingOption.setVisible(true);
+					dispose();
 
-					//new BuildingModeFrame();
-					//dispose();
 				}
 				else {
 					JOptionPane.showMessageDialog(null, "Username does not exist");
