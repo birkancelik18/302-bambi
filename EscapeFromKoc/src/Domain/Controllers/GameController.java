@@ -11,7 +11,7 @@ import Domain.Game.GameState;
 import Domain.Game.Location;
 import Domain.GameObjects.GameObject;
 import Domain.SaveLoad.FileSaveLoadAdapter;
-import Domain.SaveLoad.ISaveLoadAdapter;
+import Domain.SaveLoad.MongoSaveLoad;
 import Domain.GameObjects.Powerups.IPowerup;
 import UI.KeyFoundAlert;
 import UI.StartFrame;
@@ -298,14 +298,25 @@ public class GameController{
 	}
 
 	public void saveGame(){
-		// this is just a dummy save function
-		saveLoadService = new FileSaveLoadAdapter();
-		saveLoadService.save();
+
+		// save game to local JSON file
+		player.saveGameLocal();
+
+		// save game to mongoDB
+		player.saveGameDatabase();
+
+		// saveGame to
 	}
-	public void loadGame() throws FileNotFoundException {
-		saveLoadService = new FileSaveLoadAdapter();
-		saveLoadService.load();
+	public void loadGame(int mode) throws FileNotFoundException {
+		if(mode == 0){
+			player.loadGameLocal();
+		}else if (mode == 1){
+			player.loadGameDatabase();
+		}else{
+			System.out.println("There is an error with loading the game...");
+		}
 	}
+
 	public LinkedList<Building> getBuildings() {
 		return buildings;
 	}

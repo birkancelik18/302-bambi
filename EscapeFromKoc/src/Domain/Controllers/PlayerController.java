@@ -2,6 +2,10 @@ package Domain.Controllers;
 
 import Domain.Game.PlayerState;
 import Domain.Player.Avatar;
+import Domain.SaveLoad.FileSaveLoadAdapter;
+import Domain.SaveLoad.MongoSaveLoad;
+
+import java.io.FileNotFoundException;
 
 public class PlayerController {
 	public Avatar avatar;
@@ -9,6 +13,7 @@ public class PlayerController {
 	int score;
 	GameController escapeFromKocGame;	
 	PlayerState playerState;
+	private FileSaveLoadAdapter saveLoadService;
 
 	public PlayerController() {
 		avatar = new Avatar(25); 
@@ -53,5 +58,26 @@ public class PlayerController {
 	public PlayerState getPlayerState() {
 		return playerState;
 	}
+
+	public void saveGameLocal (){
+		saveLoadService = new FileSaveLoadAdapter();
+		saveLoadService.save();
+
+	}
+
+	public void loadGameLocal() throws FileNotFoundException {
+		saveLoadService = new FileSaveLoadAdapter();
+		//new MongoSaveLoad();
+		saveLoadService.load();
+	}
+
+	public void saveGameDatabase(){
+		new MongoSaveLoad();
+	}
+
+	public void loadGameDatabase(){
+
+	}
+
 
 }
